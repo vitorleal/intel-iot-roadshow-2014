@@ -21,7 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
-    "jquery.hotkeys": "*"
+    "jquery": "~2.1.1"
   }
 }
