@@ -1,0 +1,27 @@
+{
+  "name": "intel-iot-roadshow",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/vitorleal/intel-iot-roadshow",
+  "authors": [
+    "Vitor Leal <vitorleal1@gmail.com>"
+  ],
+  "description": "my app for intel iot roadshow",
+  "keywords": [
+    "iot",
+    "quadcopter"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "jquery.hotkeys": "*"
+  }
+}
