@@ -1,4 +1,19 @@
-var SerialPort = require('serialport');
+var SerialPort = require('serialport'),
+    path       = require('path'),
+    express    = require('express'),
+    app        = express(),
+    server     = require('http').Server(app),
+    io         = require('socket.io').listen(server);
+
+//Start in the 3000
+server.listen(3000);
+app.use("/public", express.static(path.join(__dirname, 'web')));
+
+//The main route
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/web/index.html');
+});
+
 
 //List the serial ports
 SerialPort.list(function (err, ports) {
@@ -31,8 +46,36 @@ var connectApc220 = function (port) {
         console.log('data received: ' + data);
       });
 
-      serialPort.write('s', function (err, res) {
-        console.log(res);
+      io.on('connection', function (socket) {
+        io.emit('open');
+
+        //Send the START command
+        socket.on('start', function () {
+          serialPort.write('s', function (err, res) {
+            console.log(res);
+          });
+        });
+
+        //Send the QUIT command
+        socket.on('end', function () {
+          serialPort.write('q', function (err, res) {
+            console.log(res);
+          });
+        });
+
+        //Send the UP command
+        socket.on('up', function () {
+          serialPort.write('u', function (err, res) {
+            console.log(res);
+          });
+        });
+
+        //Send the DOWN command
+        socket.on('down', function () {
+          serialPort.write('d', function (err, res) {
+            console.log(res);
+          });
+        });
       });
     }
   });
