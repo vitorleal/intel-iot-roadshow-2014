@@ -52,28 +52,28 @@ var connectApc220 = function (port) {
         //Send the START command
         socket.on('start', function () {
           serialPort.write('s', function (err, res) {
-            console.log(res);
+            console.log('start');
           });
         });
 
         //Send the QUIT command
         socket.on('end', function () {
           serialPort.write('q', function (err, res) {
-            console.log(res);
+            console.log('end');
           });
         });
 
         //Send the UP command
         socket.on('up', function () {
           serialPort.write('u', function (err, res) {
-            console.log(res);
+            console.log('up');
           });
         });
 
         //Send the DOWN command
         socket.on('down', function () {
           serialPort.write('d', function (err, res) {
-            console.log(res);
+            console.log('down');
           });
         });
       });
