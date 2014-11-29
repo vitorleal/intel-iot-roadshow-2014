@@ -49,10 +49,10 @@
     //Talk to the drone
     annyang.debug();
     annyang.addCommands({
-      'drone ligar': command.start,
-      'drone desligar': command.end
+      'drone': command.start,
+      'stop': command.end
     });
-    annyang.setLanguage('pt-BR');
+    annyang.setLanguage('en');
     annyang.start();
   });
 
