@@ -6,20 +6,27 @@
     <title>Quad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="/public/css/main.css" rel="stylesheet">
+
     <script src="/public/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/public/lib/annyang/annyang.min.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
   </head>
   <body>
       <script src="/public/js/main.js"></script>
+      <header class="header">
+        <h1>Quad</h1>
+        <div class="on-off">
+          <button id="start" class="green">Ligar</button>
+          <button id="end" class="red">desligar</button>
+        </div>
+      </header>
 
-      <center>
-        <p>
-          <button id="start">Ligar</button> <button id="end">desligar</button>
-        </p>
-
-        <p>
-          <button id="up">UP</button> <button id="down">DOWN</button>
-        </p>
-      </center>
+      <section>
+        <center class="speed-buttons">
+          <p><button id="up">UP</button></p>
+          <p><button id="down">DOWN</button></p>
+        </center>
+      </section>
   </body>
 </html>
